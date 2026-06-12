@@ -11,5 +11,5 @@ jobs:
     - name: Correr comando de registro
       run: |
         npm install -g surge
-        # Esto genera un token nuevo para el correo que inventes aquí abajo
-        surge token --email tucorreoinventado123@gmail.com --password MiClaveSegura123
+        # Este comando sí funciona directo para darte el token
+        surge token
