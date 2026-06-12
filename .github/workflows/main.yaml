@@ -1,0 +1,28 @@
+name: Despliegue Automatico a Surge
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar codigo
+      uses: actions/checkout@v4
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+
+    - name: Instalar Surge
+      run: npm install -g surge
+
+    - name: Registrar y Desplegar
+      env:
+        SURGE_LOGIN: stevenmonsanto06@gmail.com
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+      run: |
+        surge ./ stev-surge-practica.surge.sh --email stevenmonsanto06@gmail.com --password ${{ secrets.SURGE_TOKEN }}
