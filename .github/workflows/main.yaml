@@ -15,14 +15,11 @@ jobs:
     - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 18
+        node-version: 20
 
     - name: Instalar Surge
       run: npm install -g surge
 
-    - name: Registrar y Desplegar
-      env:
-        SURGE_LOGIN: stevenmonsanto06@gmail.com
-        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+    - name: Desplegar en Surge.sh
       run: |
-        surge ./ stev-surge-practica.surge.sh --email stevenmonsanto06@gmail.com --password ${{ secrets.SURGE_TOKEN }}
+        surge ./ stev-surge-practica.surge.sh --token 616db69b3df94879b69b2b5a5b5a2b5a
