@@ -21,4 +21,4 @@ jobs:
       run: npm install -g surge
 
     - name: Desplegar en Surge.sh
-      run: surge ./ stev-surge-practica.surge.sh --token abab13c414618cba5af9c1be061ec5ed
+      run: surge ./ stev-practica-itla.surge.sh --token ${{ secrets.SURGE_TOKEN }}
