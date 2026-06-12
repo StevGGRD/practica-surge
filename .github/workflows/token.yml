@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Correr comando de registro
+      env:
+        SURGE_LOGIN: cuenta-itla-test1234@gmail.com
+        SURGE_TOKEN: token-falso-solo-para-login
       run: |
         npm install -g surge
-        # Este comando sí funciona directo para darte el token
-        surge token
